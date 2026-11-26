@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enrollment Records - Campus Connect API</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body data-page="enrollment">
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark">CC</span>
+      <div>
+        <strong>Campus Connect</strong>
+        <small>Integrated Student Enrollment and Information System</small>
+      </div>
+    </div>
+    <nav>
+      <a href="/">Dashboard</a>
+      <a href="/students">Students</a>
+      <a href="/courses">Courses</a>
+      <a href="/enrollment">Enrollment</a>
+      <a href="/announcements">Announcements</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">SQLite data via REST API</p>
+    <h1>Enrollment Records</h1>
+    <p class="muted">Rows below are read directly from database.db through the JSON API.</p>
+    <section class="panel">
+      <table>
+        <thead>
+          <tr><th>Record</th><th>Student</th><th>Course</th><th>Date</th><th>Status</th></tr>
+        </thead>
+        <tbody id="data-table">
+          <tr><td colspan="5" class="muted">Loading...</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+</body>
+</html>
 
