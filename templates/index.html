@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campus Connect API - Laboratory Integration</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body data-page="dashboard">
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark">CC</span>
+      <div>
+        <strong>Campus Connect</strong>
+        <small>Integrated Student Enrollment and Information System</small>
+      </div>
+    </div>
+    <nav>
+      <a href="/">Dashboard</a>
+      <a href="/students">Students</a>
+      <a href="/courses">Courses</a>
+      <a href="/enrollment">Enrollment</a>
+      <a href="/announcements">Announcements</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="eyebrow">Flask + SQLite REST API</p>
+    <h1>Backend is running</h1>
+    <p class="muted">
+      This page is served directly by Flask so you can confirm the backend without the
+      React frontend. The Campus Connect portal calls the same JSON endpoints.
+    </p>
+
+    <section class="cards" id="stat-cards">
+      <article class="card"><span>Total Students</span><strong data-stat="total_students">-</strong></article>
+      <article class="card"><span>Total Courses</span><strong data-stat="total_courses">-</strong></article>
+      <article class="card"><span>Total Enrollments</span><strong data-stat="total_enrollments">-</strong></article>
+      <article class="card"><span>Available Courses</span><strong data-stat="available_courses">-</strong></article>
+    </section>
+
+    <section class="panel">
+      <h2>API endpoints</h2>
+      <ul class="endpoints">
+        <li><code>GET /api/health</code> connection test</li>
+        <li><code>GET /api/stats</code> dashboard counters</li>
+        <li><code>GET | POST /api/students</code></li>
+        <li><code>PUT | DELETE /api/students/&lt;id&gt;</code></li>
+        <li><code>GET | POST /api/courses</code> (Laboratory 3)</li>
+        <li><code>PUT | DELETE /api/courses/&lt;id&gt;</code></li>
+        <li><code>GET | POST /api/enrollments</code></li>
+        <li><code>PUT | DELETE /api/enrollments/&lt;id&gt;</code></li>
+        <li><code>GET | POST /api/announcements</code> (Laboratory 4)</li>
+        <li><code>PUT | DELETE /api/announcements/&lt;id&gt;</code></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='javascript/script.js') }}"></script>
+</body>
+</html>
 
